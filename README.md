@@ -28,10 +28,10 @@ The maximum value of each of the train and validation data features is as follow
 ![maximums](assets/maximum.png)
 
 >NOTE: This shows that we don't have coverage over the entire validation set. Hence normalisation to range 
-![\frac{x-min}{max-min}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx-min%7D%7Bmax-min%7D)
+( ![\frac{x-min}{max-min}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx-min%7D%7Bmax-min%7D) )
 won't work.
 
-It is unpickled and loaded into a Pandas dataframe and normalization is done. The mean and standard deviation of the features of the train data is as follows:
+Both the datasets are unpickled and loaded into Pandas dataframes. Normalization is done for both datasets using the mean and standard deviation of the features of only the train data. The train_mean and train_std are reported as follows:
 
 <table>
 <thead>
