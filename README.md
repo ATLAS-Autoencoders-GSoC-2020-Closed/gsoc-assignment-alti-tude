@@ -11,80 +11,25 @@ Clone the repo and run Jupyter Notebook. Open `Atlas Task.ipynb`.
 * `Atlas Task.ipynb` contains the main code for training and running the model.
 * `datasets/` contains the data in pickled format.
 * `models/` contains the latest model that will be used.
-* `runs/` is used for logging metrics to TensorBoard.
+* `runs/` is used for logging of TensorBoard metrics.
 * `graphs/` containss all the output graphs created.
 
-## Method
 
-### Architecture
-
-![Architecture](assets/Architecture%20diagram.png)
-
-### Data
+## Data
 
 The data is 4 dimensional. The features are `m`, `pt`, `phi`, `eta`.
 
 The minimum value of each of the train and validation data features is as follows. The minimum value of each column is colored.
 
-<table>
-<thead>
-<tr>
-  <th></th>
-  <th>m</th>
-  <th>pt</th>
-  <th>phi</th>
-  <th>eta</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Minimum (Train)</td>
-  <td bgcolor="green">-0.045353058725595474</td>
-  <td>20000.154296875</td>
-  <td bgcolor="green">-3.141587257385254</td>
-  <td>-4.745397567749023</td>
-</tr>
-<tr>
-  <td>Minimum (Validation)</td>
-  <td>-0.04531514644622803</td>
-  <td bgcolor="green">20000.07421875</td>
-  <td>-3.1414923667907715</td>
-  <td bgcolor="green">-4.78280782699585</td>
-</tr>
-</tbody>
-</table>
-
+![minimums](assets/minimum.png)
 
 The maximum value of each of the train and validation data features is as follows. The maximum value of each column is colored.
 
-<table>
-<thead>
-<tr>
-  <th></th>
-  <th>m</th>
-  <th>pt</th>
-  <th>phi</th>
-  <th>eta</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Maximum (Train)</td>
-  <td bgcolor="green">128247.671875</td>
-  <td>748795.9375</td>
-  <td bgcolor="green">3.1415462493896484</td>
-  <td bgcolor="green">4.747644424438477</td>
-</tr>
-<tr>
-  <td>Maximum (Validation)</td>
-  <td>114533.4296875</td>
-  <td bgcolor="green">786146.9375</td>
-  <td>3.141526937484741</td>
-  <td>4.6587443351745605</td>
-</tr>
-</tbody>
-</table>
+![maximums](assets/maximum.png)
 
+>NOTE: This shows that we don't have coverage over the entire validation set. Hence normalisation to range 
+![\frac{x-min}{max-min}](https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx-min%7D%7Bmax-min%7D)
+won't work.
 
 It is unpickled and loaded into a Pandas dataframe and normalization is done. The mean and standard deviation of the features of the train data is as follows:
 
@@ -116,7 +61,12 @@ It is unpickled and loaded into a Pandas dataframe and normalization is done. Th
 </tbody>
 </table>
 
-### Model
+## Model
+
+### Architecture
+
+![Architecture](assets/Architecture%20diagram.png)
+
 
 The initial parameters are as follows.
 
@@ -162,6 +112,4 @@ The initial parameters are as follows.
 ### Loss
 
 ### Metric
-
-
 
