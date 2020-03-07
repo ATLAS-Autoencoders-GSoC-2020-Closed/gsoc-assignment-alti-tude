@@ -16,8 +16,8 @@ NOTE: This codebase only works for python3.
 
 * `Atlas Task.ipynb` contains the main code for training and running the model.
 * `datasets/` contains the data in pickled format.
-* `models/` contains the latest model that will be used.
-* `runs/` is used for logging of TensorBoard metrics.
+* `models/` contains the models saved during training (both the best model so far and the latest).
+* `runs/` is used to store the details of each run of the model, in tensorflow event summary format. Needed for tensorboard logging
 * `graphs/` containss all the output graphs created.
 
 
