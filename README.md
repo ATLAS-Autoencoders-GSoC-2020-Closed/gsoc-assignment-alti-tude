@@ -4,7 +4,13 @@ Compression of [data](https://github.com/alti-tude/atlas_task/tree/master/datase
 
 ## Running the project
 
-Clone the repo and run Jupyter Notebook. Open `Atlas Task.ipynb`.
+Clone the repo.
+```
+sudo apt-install python3 python3-pip
+pip3 install torch tensorflow pandas numpy matplotlib tqdm jupyter
+jupyter notebook
+```
+NOTE: This codebase only works for python3.
 
 ## Directory structure
 
@@ -67,6 +73,7 @@ Both the datasets are unpickled and loaded into Pandas dataframes. Normalization
 
 ![Architecture](assets/Architecture%20diagram.png)
 
+### Parameter
 
 The initial parameters are as follows.
 
@@ -108,8 +115,4 @@ The initial parameters are as follows.
 </table>
 
 
-
-### Loss
-
-### Metric
 
